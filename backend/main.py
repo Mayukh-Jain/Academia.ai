@@ -12,9 +12,9 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 from fastapi import Form
 
-import backend.rag as rag
-import backend.podcast as podcast
-import backend.coursegen as coursegen
+import rag as rag
+import podcast as podcast
+import coursegen as coursegen
 
 load_dotenv()
 supabase: Client = create_client(os.getenv("SUPABASE_URL"), os.getenv("SUPABASE_KEY"))
@@ -142,5 +142,9 @@ async def get_chapter(request: ChapterRequest):
 # Serves both the generated podcasts AND the uploaded PDFs
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# At the bottom of main.py
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Ensure it reads the PORT env var if available, or defaults to 7860
+    import os
+    port = int(os.environ.get("PORT", 7860))
+    uvicorn.run(app, host="0.0.0.0", port=port)
