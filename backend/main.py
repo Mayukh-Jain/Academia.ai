@@ -12,9 +12,9 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 from fastapi import Form
 
-import rag
-import podcast
-import coursegen
+import backend.rag as rag
+import backend.podcast as podcast
+import backend.coursegen as coursegen
 
 load_dotenv()
 supabase: Client = create_client(os.getenv("SUPABASE_URL"), os.getenv("SUPABASE_KEY"))
