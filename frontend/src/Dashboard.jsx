@@ -7,7 +7,8 @@ import {
   Headphones, MessageSquare, Play, Pause, Sparkles, 
   CheckSquare, Square, Trash2, XCircle, GraduationCap, 
   BookOpen, CheckCircle, Eye, Minimize2, Home, 
-  ChevronRight, Github, Twitter, Cpu, Layers
+  ChevronRight, Github, Cpu, Layers,
+  Linkedin
 } from 'lucide-react'
 
 // If VITE_API_URL is set (in Cloud), use it. Otherwise use Localhost.
@@ -171,16 +172,47 @@ export default function Dashboard({ session }) {
     </header>
   )
 
-  const Footer = () => (
-    <footer className="border-t border-white/5 bg-slate-950 py-8 text-center text-slate-600 text-sm">
-      <div className="flex justify-center gap-6 mb-4">
-        <Github size={18} className="hover:text-white cursor-pointer transition-colors"/>
-        <Twitter size={18} className="hover:text-cyan-400 cursor-pointer transition-colors"/>
-        <Cpu size={18} className="hover:text-indigo-400 cursor-pointer transition-colors"/>
-      </div>
-      <p>© 2024 Academia.AI • Empowering Education with Intelligence</p>
-    </footer>
-  )
+ const Footer = () => (
+  <footer className="border-t border-white/5 bg-slate-950 py-8 text-center text-slate-600 text-sm">
+    <div className="flex justify-center gap-6 mb-4">
+      
+      {/* Github Link */}
+      <a 
+        href="https://github.com/Mayukh-Jain/Academia.ai" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Visit GitHub Profile"
+        className="hover:text-white transition-colors"
+      >
+        <Github size={18} />
+      </a>
+
+      {/* LinkedIn Link */}
+      <a 
+        href="https://www.linkedin.com/in/mayukh-jain-b4732128a" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Visit LinkedIn Profile"
+        className="hover:text-cyan-400 transition-colors"
+      >
+        <Linkedin size={18} />
+      </a>
+
+      {/* Portfolio/Project Link */}
+      <a 
+        href="https://academia-ai-nu.vercel.app/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Visit Product Page"
+        className="hover:text-indigo-400 transition-colors"
+      >
+        <Cpu size={18} />
+      </a>
+
+    </div>
+    <p>© 2024 Academia.AI • Empowering Education with Intelligence</p>
+  </footer>
+);
 
   // --- VIEWS ---
 
