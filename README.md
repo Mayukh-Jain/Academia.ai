@@ -120,19 +120,19 @@ Academia.AI follows a **modular, scalable, full-stack architecture** designed fo
 
 ```mermaid
 graph TD
-    User[User] -->|UI Interaction| Frontend[React + Vite]
-    
-    Frontend -->|Upload PDF / Query| Backend[FastAPI Backend]
-    
-    Backend -->|Parse PDF| PyPDF[PyPDF2]
-    Backend -->|Generate Embeddings| Gemini[Google Gemini 1.5]
-    
-    Backend -->|Store / Retrieve Vectors| Supabase[(PostgreSQL + pgvector)]
-    
-    Backend -->|Generate Audio| EdgeTTS[Edge TTS]
-    
-    Gemini -->|LLM Response| Backend
-    Backend -->|API Response| Frontend
+    User --> Frontend
+    Frontend --> Backend
+
+    Backend --> PDFParser
+    Backend --> EmbeddingModel
+    Backend --> VectorDB
+
+    VectorDB --> Backend
+    EmbeddingModel --> Backend
+
+    Backend --> TTS
+    Backend --> Frontend
+
 
 ---
 
