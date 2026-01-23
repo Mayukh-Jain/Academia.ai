@@ -1,5 +1,8 @@
 # 🎓 Academia.AI
 
+![Login Page](Academia.AI.png)
+
+
 **AI-Powered Research, Learning & Knowledge Transformation Platform**
 
 🔗 **Live Demo:** [https://academia-ai-nu.vercel.app/](https://academia-ai-nu.vercel.app/)
